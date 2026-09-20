@@ -59,14 +59,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <!-- PROJECTS -->
 
     <section
-      class="section"
+      class="section reveal"
       id="projects"
     >
 
       <div class="container section-grid">
 
         <div class="section-label">
-          01 — Selected work
+          01 | Selected work
         </div>
 
         <div class="section-content">
@@ -156,18 +156,50 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     </section>
 
+<a href="/projects/tripteron" class="project-card">
+
+  <div class="project-image">
+    <img
+      src="/images/tripteron.jpg"
+      alt="Tripteron parallel machine tool"
+    />
+  </div>
+
+  <div class="project-meta">
+
+    <span class="project-number">
+      01
+    </span>
+
+    <div>
+      <h3 class="project-name">
+        Tripteron
+      </h3>
+
+      <p class="project-type">
+        Parallel machine tool
+      </p>
+    </div>
+
+    <span class="project-arrow">
+      ↗
+    </span>
+
+  </div>
+
+</a>
 
     <!-- EXPERIENCE -->
 
     <section
-      class="section"
+      class="section reveal"
       id="experience"
     >
 
       <div class="container section-grid">
 
         <div class="section-label">
-          02 — Experience
+          02 | Experience
         </div>
 
         <div class="section-content">
@@ -183,7 +215,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <div>
 
                 <div class="experience-role">
-                  Project Management — Fives Machining
+                  Project Management | Fives Machining
                 </div>
 
                 <p class="experience-description">
@@ -204,9 +236,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
               <div>
 
-                <div class="experience-role">
-                  Robotics R&D — KM-RoBoTa
-                </div>
+              <div class="experience-role">
+                Robotics R&D | KM-RoBoTa
+              </div>
 
                 <p class="experience-description">
                   Development of lightweight robotic
@@ -221,13 +253,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <div class="experience-item">
 
               <div class="experience-date">
-                2024 — 2027
+                2024 | 2027
               </div>
 
               <div>
 
                 <div class="experience-role">
-                  Engineering Degree — ICAM
+                  Engineering Degree | ICAM
                 </div>
 
                 <p class="experience-description">
@@ -247,18 +279,109 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     </section>
 
+<!-- EDUCATION -->
+
+<section
+  class="section reveal"
+  id="education"
+>
+
+  <div class="container section-grid">
+
+    <div class="section-label">
+      03 | Education
+    </div>
+
+    <div class="section-content">
+
+      <div class="experience-list">
+
+        <div class="experience-item">
+
+          <div class="experience-date">
+            2024 | 2027
+          </div>
+
+          <div>
+
+            <div class="experience-role">
+              Engineering Degree | ICAM Grand Paris Sud
+            </div>
+
+            <p class="experience-description">
+              Apprenticeship engineering programme focused on
+              mechanical engineering, industrial systems,
+              mechatronics and project management.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+          <div class="experience-date">
+            2026
+          </div>
+
+          <div>
+
+            <div class="experience-role">
+              International Academic Mobility | Silesian University of Technology
+            </div>
+
+            <p class="experience-description">
+              Semester in Gliwice, Poland, with coursework in
+              environmental analysis, full life-cycle impact
+              assessment and IoT communications.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+          <div class="experience-date">
+            2021 | 2024
+          </div>
+
+          <div>
+
+            <div class="experience-role">
+              Bachelor of Technology in Mechanical and Production Engineering
+            </div>
+
+            <p class="experience-description">
+              IUT de Figeac | Mechanical design, manufacturing,
+              industrialisation and production engineering.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
     <!-- ABOUT -->
 
     <section
-      class="section"
+      class="section reveal"
       id="about"
     >
 
       <div class="container section-grid">
 
         <div class="section-label">
-          03 — About
+          04 | About
         </div>
 
         <div class="section-content">
@@ -279,14 +402,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <!-- CONTACT -->
 
     <section
-      class="section"
+      class="section reveal"
       id="contact"
     >
 
       <div class="container section-grid">
 
         <div class="section-label">
-          04 — Contact
+          05 | Contact
         </div>
 
         <div class="section-content">
@@ -347,5 +470,143 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
 
   </footer>
+
+<script>
+  const elements = document.querySelectorAll('.reveal');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+    }
+  );
+
+  elements.forEach((element) => observer.observe(element));
+</script>
+
+<script>
+  const heroTitle = document.querySelector('.hero h1');
+
+  window.addEventListener('scroll', () => {
+    const scroll = window.scrollY;
+
+    if (heroTitle) {
+      heroTitle.style.transform = `translateY(${scroll * 0.08}px)`;
+    }
+  });
+</script>
+
+<script>
+  const walker = document.createTreeWalker(
+    document.body,
+    NodeFilter.SHOW_TEXT
+  );
+
+  const textNodes = [];
+
+  while (walker.nextNode()) {
+    textNodes.push(walker.currentNode);
+  }
+
+  textNodes.forEach((node) => {
+    if (!node.nodeValue?.includes('|')) return;
+
+    const parent = node.parentElement;
+
+    // Évite de toucher aux scripts et styles
+    if (!parent || ['SCRIPT', 'STYLE'].includes(parent.tagName)) return;
+
+    const fragment = document.createDocumentFragment();
+
+    node.nodeValue.split('|').forEach((part, index, array) => {
+      fragment.appendChild(document.createTextNode(part));
+
+      if (index < array.length - 1) {
+        const pipe = document.createElement('span');
+        pipe.className = 'pipe';
+        pipe.textContent = '|';
+        fragment.appendChild(pipe);
+      }
+    });
+
+    node.parentNode?.replaceChild(fragment, node);
+  });
+</script>
+
+<script>
+  const autoLinks = {
+    "Tripteron": "/projects/tripteron",
+    "KM-RoBoTa": "/experience/km-robota",
+    "ICAM": "/education/icam",
+    "Silesian University of Technology": "/education/silesian-university",
+    "IUT de Figeac": "/education/iut-figeac"
+  };
+
+  const walker = document.createTreeWalker(
+    document.body,
+    NodeFilter.SHOW_TEXT
+  );
+
+  const nodes = [];
+
+  while (walker.nextNode()) {
+    nodes.push(walker.currentNode);
+  }
+
+  nodes.forEach((node) => {
+    const parent = node.parentElement;
+
+    if (
+      !parent ||
+      ["SCRIPT", "STYLE", "A"].includes(parent.tagName)
+    ) {
+      return;
+    }
+
+    let text = node.nodeValue ?? "";
+
+    const matches = Object.keys(autoLinks).filter((word) =>
+      text.includes(word)
+    );
+
+    if (matches.length === 0) return;
+
+    const fragment = document.createDocumentFragment();
+
+    const regex = new RegExp(
+      `(${matches
+        .sort((a, b) => b.length - a.length)
+        .map((word) =>
+          word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+        )
+        .join("|")})`,
+      "g"
+    );
+
+    text.split(regex).forEach((part) => {
+      if (autoLinks[part]) {
+        const link = document.createElement("a");
+
+        link.href = autoLinks[part];
+        link.textContent = part;
+        link.className = "auto-link";
+
+        fragment.appendChild(link);
+      } else {
+        fragment.appendChild(
+          document.createTextNode(part)
+        );
+      }
+    });
+
+    node.parentNode?.replaceChild(fragment, node);
+  });
+</script>
 
 </BaseLayout>

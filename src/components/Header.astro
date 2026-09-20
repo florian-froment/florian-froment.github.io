@@ -1,0 +1,156 @@
+---
+const projectPages = import.meta.glob("../pages/projects/**/*.astro");
+const experiencePages = import.meta.glob("../pages/experience/**/*.astro");
+const educationPages = import.meta.glob("../pages/education/**/*.astro");
+
+function createMenuItems(
+  pages: Record<string, unknown>,
+  folder: string
+) {
+  return Object.keys(pages)
+    .filter((path) => !path.endsWith("/index.astro"))
+    .map((path) => {
+      const relativePath = path
+        .split(`/pages/${folder}/`)[1]
+        .replace(".astro", "");
+
+      const name = relativePath
+        .split("/")
+        .pop()!
+        .replace(/-/g, " ")
+        .replace(/\b\w/g, (letter) => letter.toUpperCase());
+
+      return {
+        name,
+        href: `/${folder}/${relativePath}`,
+      };
+    })
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+const projects = createMenuItems(projectPages, "projects");
+const experiences = createMenuItems(experiencePages, "experience");
+const education = createMenuItems(educationPages, "education");
+---
+
+<header class="site-header">
+
+  <div class="container">
+
+    <nav class="navbar">
+
+      <a href="/" class="logo">
+
+        <img
+          src="/images/paraphage-florian-froment.png"
+          alt="paraphage-florian-froment"
+          class="paraphage-picture"
+        />
+
+        <span>Florian Froment</span>
+
+      </a>
+
+
+      <ul class="nav-links">
+
+        <!-- PROJECTS -->
+
+        <li class="nav-dropdown">
+
+          <a href="/#projects" class="nav-main-link">
+            Projects
+          </a>
+
+          <div class="dropdown-menu">
+
+            <a href="/#projects" class="dropdown-overview">
+              All projects
+            </a>
+
+            <div class="dropdown-separator"></div>
+
+            {projects.map((page) => (
+              <a href={page.href}>
+                {page.name}
+              </a>
+            ))}
+
+          </div>
+
+        </li>
+
+
+        <!-- EXPERIENCE -->
+
+        <li class="nav-dropdown">
+
+          <a href="/#experience" class="nav-main-link">
+            Experience
+          </a>
+
+          <div class="dropdown-menu">
+
+            <a href="/#experience" class="dropdown-overview">
+              All experience
+            </a>
+
+            <div class="dropdown-separator"></div>
+
+            {experiences.map((page) => (
+              <a href={page.href}>
+                {page.name}
+              </a>
+            ))}
+
+          </div>
+
+        </li>
+
+
+        <!-- EDUCATION -->
+
+        <li class="nav-dropdown">
+
+          <a href="/#education" class="nav-main-link">
+            Education
+          </a>
+
+          <div class="dropdown-menu">
+
+            <a href="/#education" class="dropdown-overview">
+              All education
+            </a>
+
+            <div class="dropdown-separator"></div>
+
+            {education.map((page) => (
+              <a href={page.href}>
+                {page.name}
+              </a>
+            ))}
+
+          </div>
+
+        </li>
+
+
+        <li>
+          <a href="/#about">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="/#contact">
+            Contact
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+  </div>
+
+</header>

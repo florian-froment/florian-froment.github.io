@@ -1,0 +1,88 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+
+interface Props {
+  title: string;
+  category: string;
+  year?: string;
+  description?: string;
+}
+
+const {
+  title,
+  category,
+  year,
+  description = ""
+} = Astro.props;
+---
+
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <meta
+      name="description"
+      content={description}
+    />
+
+    <title>{title} | Florian Froment</title>
+  </head>
+
+  <body>
+
+    <Header />
+
+
+    <main class="detail-page">
+
+      <section class="detail-hero">
+
+        <div class="container section-grid">
+
+          <div class="section-label">
+            {category}
+          </div>
+
+          <div class="section-content">
+
+            <p class="eyebrow">
+              {year}
+            </p>
+
+            <h1 class="detail-title">
+              {title}
+            </h1>
+
+            <slot name="intro" />
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <section class="detail-content">
+
+        <div class="container">
+
+          <slot />
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </body>
+
+</html>
