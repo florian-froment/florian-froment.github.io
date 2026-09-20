@@ -1,0 +1,90 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Florian Froment — Engineering Portfolio",
+  description = "Mechanical Engineering, Robotics & R&D portfolio of Florian Froment."
+} = Astro.props;
+---
+
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <meta
+      name="description"
+      content={description}
+    />
+
+    <title>{title}</title>
+
+  </head>
+
+  <body>
+
+    <header class="site-header">
+
+      <div class="container">
+
+        <nav class="navbar">
+
+          <a
+            href="/"
+            class="logo"
+          >
+            Florian Froment
+          </a>
+
+          <ul class="nav-links">
+
+            <li>
+              <a href="#projects">
+                Projects
+              </a>
+            </li>
+
+            <li>
+              <a href="#experience">
+                Experience
+              </a>
+            </li>
+
+            <li>
+              <a href="#about">
+                About
+              </a>
+            </li>
+
+            <li>
+              <a href="#contact">
+                Contact
+              </a>
+            </li>
+
+          </ul>
+
+        </nav>
+
+      </div>
+
+    </header>
+
+    <slot />
+
+  </body>
+
+</html>
