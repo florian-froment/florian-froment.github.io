@@ -2,6 +2,7 @@
 const projectPages = import.meta.glob("../pages/projects/**/*.astro");
 const experiencePages = import.meta.glob("../pages/experience/**/*.astro");
 const educationPages = import.meta.glob("../pages/education/**/*.astro");
+const aboutPages = import.meta.glob("../pages/about/**/*.astro");
 
 function createMenuItems(
   pages: Record<string, unknown>,
@@ -31,6 +32,7 @@ function createMenuItems(
 const projects = createMenuItems(projectPages, "projects");
 const experiences = createMenuItems(experiencePages, "experience");
 const education = createMenuItems(educationPages, "education");
+const about = createMenuItems(aboutPages, "about");
 ---
 
 <header class="site-header">
@@ -135,11 +137,29 @@ const education = createMenuItems(educationPages, "education");
         </li>
 
 
-        <li>
-          <a href="/#about">
-            About
-          </a>
-        </li>
+        <li class="nav-dropdown">
+
+  <a href="/#about" class="nav-main-link">
+    About
+  </a>
+
+  <div class="dropdown-menu">
+
+    <a href="/#about" class="dropdown-overview">
+      About overview
+    </a>
+
+    <div class="dropdown-separator"></div>
+
+    {about.map((page) => (
+      <a href={page.href}>
+        {page.name}
+      </a>
+    ))}
+
+  </div>
+
+</li>
 
         <li>
           <a href="/#contact">

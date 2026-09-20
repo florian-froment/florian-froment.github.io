@@ -1,0 +1,178 @@
+---
+const pages = import.meta.glob(
+  [
+    "../pages/projects/**/*.astro",
+    "../pages/experience/**/*.astro",
+    "../pages/education/**/*.astro",
+    "../pages/about/**/*.astro"
+  ]
+);
+
+function createLabel(path: string) {
+  const filename = path
+    .split("/")
+    .pop()
+    ?.replace(".astro", "") ?? "";
+
+  return filename
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
+function createHref(path: string) {
+  return path
+    .replace("../pages", "")
+    .replace(".astro", "");
+}
+
+const autoLinks: Record<string, string> = {};
+
+Object.keys(pages).forEach((path) => {
+
+  // Ignore les éventuelles pages index.astro
+  if (path.endsWith("/index.astro")) return;
+
+  const label = createLabel(path);
+  const href = createHref(path);
+
+  autoLinks[label] = href;
+});
+---
+
+<script define:vars={{ autoLinks }}>
+
+  function createAutoLinks() {
+
+    const walker = document.createTreeWalker(
+      document.body,
+      NodeFilter.SHOW_TEXT
+    );
+
+    const nodes = [];
+
+    while (walker.nextNode()) {
+      nodes.push(walker.currentNode);
+    }
+
+    nodes.forEach((node) => {
+
+      const parent = node.parentElement;
+
+      if (
+        !parent ||
+        ["SCRIPT", "STYLE", "A", "NOSCRIPT"].includes(parent.tagName) ||
+        parent.classList.contains("pipe")
+      ) {
+        return;
+      }
+
+      const text = node.nodeValue ?? "";
+
+      const matches = Object.keys(autoLinks)
+        .filter((word) => text.includes(word))
+        .sort((a, b) => b.length - a.length);
+
+      if (matches.length === 0) return;
+
+      const regex = new RegExp(
+        `(${matches
+          .map((word) =>
+            word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+          )
+          .join("|")})`,
+        "g"
+      );
+
+      const fragment = document.createDocumentFragment();
+
+      text.split(regex).forEach((part) => {
+
+        if (autoLinks[part]) {
+
+          const link = document.createElement("a");
+
+          link.href = autoLinks[part];
+          link.textContent = part;
+          link.className = "auto-link";
+
+          fragment.appendChild(link);
+
+        } else {
+
+          fragment.appendChild(
+            document.createTextNode(part)
+          );
+
+        }
+
+      });
+
+      node.parentNode?.replaceChild(fragment, node);
+
+    });
+
+  }
+
+
+  function highlightPipes() {
+
+    const walker = document.createTreeWalker(
+      document.body,
+      NodeFilter.SHOW_TEXT
+    );
+
+    const nodes = [];
+
+    while (walker.nextNode()) {
+      nodes.push(walker.currentNode);
+    }
+
+    nodes.forEach((node) => {
+
+      if (!node.nodeValue?.includes("|")) return;
+
+      const parent = node.parentElement;
+
+      if (
+        !parent ||
+        ["SCRIPT", "STYLE", "NOSCRIPT"].includes(parent.tagName) ||
+        parent.classList.contains("pipe")
+      ) {
+        return;
+      }
+
+      const fragment = document.createDocumentFragment();
+
+      node.nodeValue
+        .split("|")
+        .forEach((part, index, array) => {
+
+          fragment.appendChild(
+            document.createTextNode(part)
+          );
+
+          if (index < array.length - 1) {
+
+            const pipe = document.createElement("span");
+
+            pipe.className = "pipe";
+            pipe.textContent = "|";
+
+            fragment.appendChild(pipe);
+
+          }
+
+        });
+
+      node.parentNode?.replaceChild(fragment, node);
+
+    });
+
+  }
+
+
+  createAutoLinks();
+
+  highlightPipes();
+
+</script>
