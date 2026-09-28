@@ -33,6 +33,31 @@ const projects = createMenuItems(projectPages, "projects");
 const experiences = createMenuItems(experiencePages, "experience");
 const education = createMenuItems(educationPages, "education");
 const about = createMenuItems(aboutPages, "about");
+const completedProjectPages = import.meta.glob(
+  "../pages/projects/completed/**/*.astro"
+);
+
+const inProgressProjectPages = import.meta.glob(
+  "../pages/projects/in-progress/**/*.astro"
+);
+
+const visionProjectPages = import.meta.glob(
+  "../pages/projects/vision/**/*.astro"
+);
+const completedProjects = createMenuItems(
+  completedProjectPages,
+  "projects/completed"
+);
+
+const inProgressProjects = createMenuItems(
+  inProgressProjectPages,
+  "projects/in-progress"
+);
+
+const visionProjects = createMenuItems(
+  visionProjectPages,
+  "projects/vision"
+);
 ---
 
 <header class="site-header">
@@ -60,27 +85,75 @@ const about = createMenuItems(aboutPages, "about");
 
         <li class="nav-dropdown">
 
-          <a href="/#projects" class="nav-main-link">
-            Projects
+  <a href="/#projects" class="nav-main-link">
+    Projects
+  </a>
+
+  <div class="dropdown-menu cascading-menu">
+
+    <a href="/#projects" class="dropdown-overview">
+      All projects
+    </a>
+
+    <div class="dropdown-separator"></div>
+
+
+    <div class="cascade-item">
+
+      <button class="cascade-trigger">
+        <span>Completed</span>
+        <span class="cascade-arrow">›</span>
+      </button>
+
+      <div class="cascade-submenu">
+        {completedProjects.map((page) => (
+          <a href={page.href}>
+            {page.name}
           </a>
+        ))}
+      </div>
 
-          <div class="dropdown-menu">
+    </div>
 
-            <a href="/#projects" class="dropdown-overview">
-              All projects
-            </a>
 
-            <div class="dropdown-separator"></div>
+    <div class="cascade-item">
 
-            {projects.map((page) => (
-              <a href={page.href}>
-                {page.name}
-              </a>
-            ))}
+      <button class="cascade-trigger">
+        <span>In Progress</span>
+        <span class="cascade-arrow">›</span>
+      </button>
 
-          </div>
+      <div class="cascade-submenu">
+        {inProgressProjects.map((page) => (
+          <a href={page.href}>
+            {page.name}
+          </a>
+        ))}
+      </div>
 
-        </li>
+    </div>
+
+
+    <div class="cascade-item">
+
+      <button class="cascade-trigger">
+        <span>Vision</span>
+        <span class="cascade-arrow">›</span>
+      </button>
+
+      <div class="cascade-submenu">
+        {visionProjects.map((page) => (
+          <a href={page.href}>
+            {page.name}
+          </a>
+        ))}
+      </div>
+
+    </div>
+
+  </div>
+
+</li>
 
 
         <!-- EXPERIENCE -->

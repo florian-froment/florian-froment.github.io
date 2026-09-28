@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="404 | Page not found"
+  description="The requested page could not be found."
+>
+
+  <section class="error-page">
+
+    <div class="container error-grid">
+
+      <div class="error-code">
+  <span>4</span>
+  <span>0</span>
+  <span>4</span>
+</div>
+
+      <div class="error-content">
+
+        <p class="error-label">
+          Page not found
+        </p>
+
+        <h1>
+          This page does not exist.
+        </h1>
+
+        <p class="error-text">
+          The page you are looking for may have been moved,
+          renamed or is still under development.
+        </p>
+
+        <div class="error-actions">
+
+          <a href="/" class="error-primary">
+            Back to home
+            <span>↗</span>
+          </a>
+
+          <a href="/#projects" class="error-secondary">
+            Explore projects
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</BaseLayout>

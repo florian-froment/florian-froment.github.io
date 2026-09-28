@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Robot3D from "../components/Robot3D.astro";
 ---
 
 <BaseLayout>
@@ -10,18 +11,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     <section class="hero">
 
+      <div class="hero-robot">
+        <Robot3D />
+      </div>
+
       <div class="container hero-grid">
 
         <div class="hero-content">
 
           <p class="eyebrow">
-            Mechanical Engineering · Robotics · R&D
+            Mechanical Engineering · Precision · Robotics · R&D
           </p>
 
           <h1>
             Engineering<br />
-            what comes<br />
-            next.
+            in its<br />
+            rawest form.
           </h1>
 
           <p class="hero-intro">
@@ -55,7 +60,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     </section>
 
-
     <!-- PROJECTS -->
 
     <section
@@ -65,9 +69,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <div class="container section-grid">
 
-        <div class="section-label">
-          01 | Selected work
-        </div>
+<p class="section-label">
+
+  <span>01 </span>
+
+  <span class="pipe">| </span>
+
+  <span
+    class="scramble-title"
+    data-text="Selected work"
+  >
+     Selected work
+  </span>
+</p>
 
         <div class="section-content">
 
@@ -197,10 +211,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     >
 
       <div class="container section-grid">
+<p class="section-label">
 
-        <div class="section-label">
-          02 | Experience
-        </div>
+  <span>02 </span>
+
+  <span class="pipe">| </span>
+
+  <span
+    class="scramble-title"
+    data-text="Engineering Experience"
+  >
+     Engineering Experience
+  </span>
+</p>
 
         <div class="section-content">
 
@@ -288,9 +311,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <div class="container section-grid">
 
-    <div class="section-label">
-      03 | Education
-    </div>
+<p class="section-label">
+
+  <span>03 </span>
+
+  <span class="pipe">| </span>
+
+  <span
+    class="scramble-title"
+    data-text="Education"
+  >
+     Education
+  </span>
+</p>
 
     <div class="section-content">
 
@@ -380,9 +413,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <div class="container section-grid">
 
-        <div class="section-label">
-          04 | About
-        </div>
+<p class="section-label">
+
+  <span>04 </span>
+
+  <span class="pipe">| </span>
+
+  <span
+    class="scramble-title"
+    data-text="About"
+  >
+     About
+  </span>
+</p>
+
 
         <div class="section-content">
 
@@ -408,9 +452,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <div class="container section-grid">
 
-        <div class="section-label">
-          05 | Contact
-        </div>
+       <p class="section-label">
+
+  <span>05 </span>
+
+  <span class="pipe">| </span>
+
+  <span
+    class="scramble-title"
+    data-text="Contact"
+  >
+     Contact
+  </span>
+</p>
 
         <div class="section-content">
 
@@ -451,25 +505,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </main>
 
 
-  <footer class="footer">
-
-    <div class="container footer-content">
-
-      <span>
-        Florian Froment
-      </span>
-
-      <span>
-        Mechanical Engineering · Robotics · R&D
-      </span>
-
-      <span>
-        © 2026
-      </span>
-
-    </div>
-
-  </footer>
+  
 
 <script>
   const elements = document.querySelectorAll('.reveal');
@@ -499,6 +535,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     if (heroTitle instanceof HTMLElement) {
       heroTitle.style.transform = `translateY(${scroll * 0.08}px)`;
     }
+  });
+</script>
+<script>
+  const robot = document.querySelector('.hero-robot');
+
+  window.addEventListener('scroll', () => {
+    if (!(robot instanceof HTMLElement)) return;
+
+    const scroll = window.scrollY;
+    const maxScroll = window.innerHeight * 0.8;
+
+    const progress = Math.min(scroll / maxScroll, 1);
+
+    robot.style.opacity = String(1 - progress);
+
+    robot.style.transform = `
+      translateY(${-progress * 30}px)
+      scale(${1 - progress * 0.04})
+    `;
   });
 </script>
 

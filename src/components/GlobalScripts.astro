@@ -176,3 +176,82 @@ Object.keys(pages).forEach((path) => {
   highlightPipes();
 
 </script>
+<script>
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+  function scrambleText(element) {
+    const finalText =
+      element.dataset.text ||
+      element.textContent ||
+      "";
+
+    let frame = 0;
+
+    const totalFrames = 20;
+
+    const interval = window.setInterval(() => {
+
+      const progress = frame / totalFrames;
+
+      element.textContent = finalText
+        .split("")
+        .map((char, index) => {
+
+          if (char === " ") return " ";
+
+          if (index / finalText.length < progress) {
+            return finalText[index];
+          }
+
+          return chars[
+            Math.floor(Math.random() * chars.length)
+          ];
+        })
+        .join("");
+
+      frame++;
+
+      if (frame > totalFrames) {
+        window.clearInterval(interval);
+        element.textContent = finalText;
+      }
+
+    }, 30);
+  }
+
+  let previousScrollY = window.scrollY;
+
+  const titles =
+    document.querySelectorAll(".scramble-title");
+
+  const observer =
+    new IntersectionObserver(
+      (entries) => {
+
+        const scrollingDown =
+          window.scrollY >= previousScrollY;
+
+        entries.forEach((entry) => {
+
+          if (
+            entry.isIntersecting &&
+            scrollingDown &&
+            entry.target instanceof HTMLElement
+          ) {
+            scrambleText(entry.target);
+          }
+
+        });
+
+        previousScrollY = window.scrollY;
+
+      },
+      {
+        threshold: 0.6
+      }
+    );
+
+  titles.forEach((title) => {
+    observer.observe(title);
+  });
+</script>
