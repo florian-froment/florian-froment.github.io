@@ -1,18 +1,17 @@
 ---
-const pages = import.meta.glob(
-  [
-    "../pages/projects/**/*.astro",
-    "../pages/experience/**/*.astro",
-    "../pages/education/**/*.astro",
-    "../pages/about/**/*.astro"
-  ]
-);
+const pages = import.meta.glob([
+  "../pages/projects/**/*.astro",
+  "../pages/experience/**/*.astro",
+  "../pages/education/**/*.astro",
+  "../pages/about/**/*.astro"
+]);
 
 function createLabel(path: string) {
-  const filename = path
-    .split("/")
-    .pop()
-    ?.replace(".astro", "") ?? "";
+  const filename =
+    path
+      .split("/")
+      .pop()
+      ?.replace(".astro", "") ?? "";
 
   return filename
     .replace(/-/g, " ")
@@ -28,8 +27,6 @@ function createHref(path: string) {
 const autoLinks: Record<string, string> = {};
 
 Object.keys(pages).forEach((path) => {
-
-  // Ignore les éventuelles pages index.astro
   if (path.endsWith("/index.astro")) return;
 
   const label = createLabel(path);
@@ -37,6 +34,24 @@ Object.keys(pages).forEach((path) => {
 
   autoLinks[label] = href;
 });
+
+
+/* ALIAS OFFICIELS */
+
+autoLinks["ICAM"] =
+  "/education/icam";
+
+autoLinks["ICAM Grand Paris Sud"] =
+  "/education/icam";
+
+autoLinks["Silesian University of Technology"] =
+  "/education/silesian-university";
+
+autoLinks["IUT de Figeac"] =
+  "/education/iut-figeac";
+
+autoLinks["Wrexham University"] =
+  "/education/wrexham-university";
 ---
 
 <script define:vars={{ autoLinks }}>
@@ -53,6 +68,7 @@ Object.keys(pages).forEach((path) => {
     while (walker.nextNode()) {
       nodes.push(walker.currentNode);
     }
+
 
     nodes.forEach((node) => {
 
@@ -74,6 +90,7 @@ Object.keys(pages).forEach((path) => {
 
       if (matches.length === 0) return;
 
+
       const regex = new RegExp(
         `(${matches
           .map((word) =>
@@ -83,17 +100,26 @@ Object.keys(pages).forEach((path) => {
         "g"
       );
 
-      const fragment = document.createDocumentFragment();
+
+      const fragment =
+        document.createDocumentFragment();
+
 
       text.split(regex).forEach((part) => {
 
         if (autoLinks[part]) {
 
-          const link = document.createElement("a");
+          const link =
+            document.createElement("a");
 
-          link.href = autoLinks[part];
-          link.textContent = part;
-          link.className = "auto-link";
+          link.href =
+            autoLinks[part];
+
+          link.textContent =
+            part;
+
+          link.className =
+            "auto-link";
 
           fragment.appendChild(link);
 
@@ -107,7 +133,11 @@ Object.keys(pages).forEach((path) => {
 
       });
 
-      node.parentNode?.replaceChild(fragment, node);
+
+      node.parentNode?.replaceChild(
+        fragment,
+        node
+      );
 
     });
 
@@ -116,10 +146,11 @@ Object.keys(pages).forEach((path) => {
 
   function highlightPipes() {
 
-    const walker = document.createTreeWalker(
-      document.body,
-      NodeFilter.SHOW_TEXT
-    );
+    const walker =
+      document.createTreeWalker(
+        document.body,
+        NodeFilter.SHOW_TEXT
+      );
 
     const nodes = [];
 
@@ -127,11 +158,13 @@ Object.keys(pages).forEach((path) => {
       nodes.push(walker.currentNode);
     }
 
+
     nodes.forEach((node) => {
 
       if (!node.nodeValue?.includes("|")) return;
 
-      const parent = node.parentElement;
+      const parent =
+        node.parentElement;
 
       if (
         !parent ||
@@ -141,7 +174,10 @@ Object.keys(pages).forEach((path) => {
         return;
       }
 
-      const fragment = document.createDocumentFragment();
+
+      const fragment =
+        document.createDocumentFragment();
+
 
       node.nodeValue
         .split("|")
@@ -153,10 +189,14 @@ Object.keys(pages).forEach((path) => {
 
           if (index < array.length - 1) {
 
-            const pipe = document.createElement("span");
+            const pipe =
+              document.createElement("span");
 
-            pipe.className = "pipe";
-            pipe.textContent = "|";
+            pipe.className =
+              "pipe";
+
+            pipe.textContent =
+              "|";
 
             fragment.appendChild(pipe);
 
@@ -164,7 +204,11 @@ Object.keys(pages).forEach((path) => {
 
         });
 
-      node.parentNode?.replaceChild(fragment, node);
+
+      node.parentNode?.replaceChild(
+        fragment,
+        node
+      );
 
     });
 
@@ -176,6 +220,7 @@ Object.keys(pages).forEach((path) => {
   highlightPipes();
 
 </script>
+
 <script>
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 

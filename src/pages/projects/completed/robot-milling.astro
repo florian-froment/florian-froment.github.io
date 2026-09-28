@@ -1,0 +1,841 @@
+---
+import ProjectLayout from "../../../layouts/ProjectLayout.astro";
+---
+
+<ProjectLayout
+  title="Robot Milling"
+  category="Project | Robotic Machining"
+  year="2024"
+  description="IUT Figeac project exploring robotic machining using an industrial robot equipped with a milling spindle, including cutting-condition definition and reconstruction of Bézier surfaces."
+>
+
+  <p slot="intro">
+    A robotic machining project developed at IUT Figeac, combining an industrial
+    robot, a milling spindle, cutting-condition definition and geometric
+    reconstruction of complex Bézier surfaces.
+  </p>
+
+
+  <!-- PROJECT SNAPSHOT -->
+
+  <section class="portfolio-hero">
+
+    <div class="portfolio-outcome">
+
+      <span class="portfolio-kicker">
+        Outcome
+      </span>
+
+      <h2>
+        Turning an industrial robot into a machining system.
+      </h2>
+
+      <p>
+        The project explored the use of a conventional industrial robot as a
+        machining platform by integrating a milling head and adapting the process
+        to the constraints of robotic machining.
+      </p>
+
+      <div class="portfolio-metrics">
+
+        <div>
+          <strong>6-axis</strong>
+          <span>Industrial robot</span>
+        </div>
+
+        <div>
+          <strong>Milling</strong>
+          <span>Machining spindle integration</span>
+        </div>
+
+        <div>
+          <strong>Bézier</strong>
+          <span>Complex surface reconstruction</span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <figure class="portfolio-main-visual">
+
+      <img
+        src="/images/projects/robot-milling/robot-milling-main.jpg"
+        alt="Industrial robot equipped with a milling spindle"
+      />
+
+      <figcaption>
+        Robotic machining system | Industrial robot equipped with a milling head
+      </figcaption>
+
+    </figure>
+
+  </section>
+
+
+  <!-- 01 | CONTEXT -->
+
+  <section class="detail-section">
+
+    <div class="detail-index">
+      01
+    </div>
+
+    <div class="detail-copy">
+
+      <h2>
+        Context
+      </h2>
+
+      <p>
+        The project was developed during my mechanical engineering studies
+        at IUT Figeac.
+      </p>
+
+      <p>
+        The objective was to investigate how a conventional industrial robot
+        could be adapted for machining operations by integrating a dedicated
+        milling spindle and defining suitable cutting conditions.
+      </p>
+
+      <p>
+        The project also included a geometric reconstruction component focused
+        on complex surfaces represented through Bézier geometry.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- 02 | SYSTEM CONCEPT -->
+
+  <section class="portfolio-visual-section">
+
+    <div class="portfolio-section-header">
+
+      <span>
+        02 | System concept
+      </span>
+
+      <h2>
+        Robot. Spindle. Toolpath.
+      </h2>
+
+    </div>
+
+
+    <div class="process-grid">
+
+      <figure>
+
+        <img
+          src="/images/projects/robot-milling/robot-base.jpg"
+          alt="Industrial robot used for the milling project"
+        />
+
+        <figcaption>
+          01 | Industrial robot platform
+        </figcaption>
+
+      </figure>
+
+
+      <figure>
+
+        <img
+          src="/images/projects/robot-milling/spindle-integration.jpg"
+          alt="Milling spindle integration on the robot"
+        />
+
+        <figcaption>
+          02 | Milling spindle integration
+        </figcaption>
+
+      </figure>
+
+
+      <figure>
+
+        <img
+          src="/images/projects/robot-milling/toolpath.jpg"
+          alt="Robotic machining toolpath"
+        />
+
+        <figcaption>
+          03 | Toolpath generation
+        </figcaption>
+
+      </figure>
+
+    </div>
+
+  </section>
+
+
+  <!-- 03 | OBJECTIVES -->
+
+  <section class="detail-section">
+
+    <div class="detail-index">
+      03
+    </div>
+
+    <div class="detail-copy">
+
+      <h2>
+        Engineering objectives
+      </h2>
+
+      <ul>
+        <li>
+          Adapt an industrial robot for milling operations
+        </li>
+
+        <li>
+          Integrate a machining spindle on the robot wrist
+        </li>
+
+        <li>
+          Define suitable cutting conditions
+        </li>
+
+        <li>
+          Generate machining trajectories for complex geometry
+        </li>
+
+        <li>
+          Work with Bézier surface representations
+        </li>
+
+        <li>
+          Reconstruct target geometry from geometric data
+        </li>
+
+        <li>
+          Evaluate the limitations of robotic machining
+        </li>
+      </ul>
+
+    </div>
+
+  </section>
+
+
+  <!-- 04 | MY CONTRIBUTION -->
+
+  <section class="detail-section">
+
+    <div class="detail-index">
+      04
+    </div>
+
+    <div class="detail-copy">
+
+      <h2>
+        My contribution
+      </h2>
+
+      <ul>
+        <li>
+          Worked on the robotic machining architecture
+        </li>
+
+        <li>
+          Contributed to milling-head integration
+        </li>
+
+        <li>
+          Defined and analysed cutting conditions
+        </li>
+
+        <li>
+          Worked on toolpath generation
+        </li>
+
+        <li>
+          Studied Bézier surface geometry
+        </li>
+
+        <li>
+          Contributed to geometric reconstruction
+        </li>
+
+        <li>
+          Analysed the interaction between robot kinematics and machining
+        </li>
+      </ul>
+
+    </div>
+
+  </section>
+
+
+  <!-- 05 | ROBOTIC MACHINING -->
+
+  <section class="portfolio-system">
+
+    <div class="portfolio-section-header">
+
+      <span>
+        05 | Robotic machining
+      </span>
+
+      <h2>
+        A flexible machine tool with different constraints.
+      </h2>
+
+    </div>
+
+
+    <div class="system-grid">
+
+      <figure class="system-overview">
+
+        <img
+          src="/images/projects/robot-milling/system-overview.jpg"
+          alt="Overall robotic machining architecture"
+        />
+
+        <figcaption>
+          System architecture | Robot, spindle, workpiece and toolpath
+        </figcaption>
+
+      </figure>
+
+
+      <div class="subsystem-stack">
+
+        <figure>
+
+          <img
+            src="/images/projects/robot-milling/tool-detail.jpg"
+            alt="Robotic milling spindle and cutting tool"
+          />
+
+          <figcaption>
+            End effector | Spindle and cutting tool
+          </figcaption>
+
+        </figure>
+
+
+        <div class="subsystem-copy">
+
+          <h3>
+            Mechanical integration
+          </h3>
+
+          <p>
+            Adding a milling spindle transforms the robot wrist into a machining
+            end effector.
+          </p>
+
+          <p>
+            The resulting system must account for spindle mass, tool orientation,
+            robot reach, structural flexibility and machining forces throughout
+            the trajectory.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 06 | CUTTING CONDITIONS -->
+
+  <section class="detail-section">
+
+    <div class="detail-index">
+      06
+    </div>
+
+    <div class="detail-copy">
+
+      <h2>
+        Cutting conditions
+      </h2>
+
+      <p>
+        Robotic machining requires particular attention to cutting conditions.
+      </p>
+
+      <p>
+        Unlike a conventional machine tool, an industrial robot generally has a
+        more compliant structure, meaning that machining forces can have a greater
+        influence on positioning accuracy and vibration.
+      </p>
+
+      <p>
+        Cutting parameters therefore had to be selected while considering both
+        material removal requirements and the mechanical limits of the robotic
+        system.
+      </p>
+
+      <ul>
+        <li>
+          Cutting speed
+        </li>
+
+        <li>
+          Feed rate
+        </li>
+
+        <li>
+          Depth of cut
+        </li>
+
+        <li>
+          Tool engagement
+        </li>
+
+        <li>
+          Robot configuration
+        </li>
+      </ul>
+
+    </div>
+
+  </section>
+
+
+  <!-- 07 | BEZIER SURFACES -->
+
+  <section class="detail-section">
+
+    <div class="detail-index">
+      07
+    </div>
+
+    <div class="detail-copy">
+
+      <h2>
+        Bézier surfaces
+      </h2>
+
+      <p>
+        The project also involved machining geometrically complex surfaces
+        described using Bézier representations.
+      </p>
+
+      <p>
+        Bézier surfaces provide a continuous mathematical description of a shape
+        based on control points, making them useful for representing smooth
+        free-form geometry.
+      </p>
+
+      <p>
+        This required linking geometric modelling with the generation of machining
+        trajectories that the robot could physically execute.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- 08 | RECONSTRUCTION -->
+
+  <section class="portfolio-wide-visual">
+
+    <figure>
+
+      <img
+        src="/images/projects/robot-milling/bezier-reconstruction.jpg"
+        alt="Geometric reconstruction of a Bézier surface"
+      />
+
+      <figcaption>
+        Surface reconstruction | From geometric data to machinable Bézier geometry
+      </figcaption>
+
+    </figure>
+
+  </section>
+
+
+  <!-- 09 | GEOMETRIC RECONSTRUCTION -->
+
+  <section class="detail-section">
+
+    <div class="detail-index">
+      09
+    </div>
+
+    <div class="detail-copy">
+
+      <h2>
+        Geometric reconstruction
+      </h2>
+
+      <p>
+        A dedicated part of the project focused on reconstructing the target
+        surface from available geometric information.
+      </p>
+
+      <p>
+        The objective was to obtain a mathematical representation sufficiently
+        accurate and continuous to support subsequent machining operations.
+      </p>
+
+      <p>
+        This created a direct link between measurement, geometry reconstruction
+        and manufacturing.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- 10 | ROBOT KINEMATICS -->
+
+  <section class="detail-section">
+
+    <div class="detail-index">
+      10
+    </div>
+
+    <div class="detail-copy">
+
+      <h2>
+        Robot kinematics
+      </h2>
+
+      <p>
+        A six-axis robot offers a large workspace and significant freedom in tool
+        orientation.
+      </p>
+
+      <p>
+        However, the same tool position can often be reached using several robot
+        configurations, each with different stiffness and accessibility.
+      </p>
+
+      <p>
+        Machining trajectory planning therefore had to consider not only the
+        toolpath itself, but also how the complete robot moved along that path.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- 11 | DEVELOPMENT -->
+
+  <section class="portfolio-visual-section">
+
+    <div class="portfolio-section-header">
+
+      <span>
+        11 | Development
+      </span>
+
+      <h2>
+        Reconstruct. Program. Machine. Evaluate.
+      </h2>
+
+    </div>
+
+
+    <div class="process-grid">
+
+      <figure>
+
+        <img
+          src="/images/projects/robot-milling/reconstruction.jpg"
+          alt="Surface reconstruction process"
+        />
+
+        <figcaption>
+          Reconstruction
+        </figcaption>
+
+      </figure>
+
+
+      <figure>
+
+        <img
+          src="/images/projects/robot-milling/programming.jpg"
+          alt="Robot machining programming"
+        />
+
+        <figcaption>
+          Robot programming
+        </figcaption>
+
+      </figure>
+
+
+      <figure>
+
+        <img
+          src="/images/projects/robot-milling/machining.jpg"
+          alt="Robot performing a milling operation"
+        />
+
+        <figcaption>
+          Physical machining
+        </figcaption>
+
+      </figure>
+
+    </div>
+
+  </section>
+
+
+  <!-- 12 | LIMITATIONS -->
+
+  <section class="detail-section">
+
+    <div class="detail-index">
+      12
+    </div>
+
+    <div class="detail-copy">
+
+      <h2>
+        Engineering limitations
+      </h2>
+
+      <p>
+        The project highlighted several differences between robotic machining
+        and conventional CNC machining.
+      </p>
+
+      <ul>
+        <li>
+          Lower structural stiffness
+        </li>
+
+        <li>
+          Greater sensitivity to cutting forces
+        </li>
+
+        <li>
+          Configuration-dependent rigidity
+        </li>
+
+        <li>
+          More complex kinematics
+        </li>
+
+        <li>
+          Need for careful toolpath planning
+        </li>
+
+        <li>
+          Potential vibration and accuracy limitations
+        </li>
+      </ul>
+
+    </div>
+
+  </section>
+
+
+  <!-- 13 | DOCUMENTATION -->
+
+  <section class="portfolio-documents">
+
+    <div class="portfolio-section-header">
+
+      <span>
+        13 | Documentation
+      </span>
+
+      <h2>
+        Engineering records.
+      </h2>
+
+    </div>
+
+
+    <div class="document-grid">
+
+      <a
+        href="/documents/robot-milling/project-report.pdf"
+        target="_blank"
+        class="document-card"
+      >
+
+        <div>
+
+          <span class="document-type">
+            PDF
+          </span>
+
+          <h3>
+            Project report
+          </h3>
+
+          <p>
+            Robotic machining architecture, methodology and project conclusions.
+          </p>
+
+        </div>
+
+        <span class="document-arrow">
+          ↗
+        </span>
+
+      </a>
+
+
+      <a
+        href="/documents/robot-milling/bezier-study.pdf"
+        target="_blank"
+        class="document-card"
+      >
+
+        <div>
+
+          <span class="document-type">
+            PDF
+          </span>
+
+          <h3>
+            Bézier study
+          </h3>
+
+          <p>
+            Surface reconstruction, mathematical geometry and trajectory generation.
+          </p>
+
+        </div>
+
+        <span class="document-arrow">
+          ↗
+        </span>
+
+      </a>
+
+
+      <a
+        href="/documents/robot-milling/cutting-study.pdf"
+        target="_blank"
+        class="document-card"
+      >
+
+        <div>
+
+          <span class="document-type">
+            PDF
+          </span>
+
+          <h3>
+            Cutting study
+          </h3>
+
+          <p>
+            Cutting conditions and robotic machining considerations.
+          </p>
+
+        </div>
+
+        <span class="document-arrow">
+          ↗
+        </span>
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- 14 | SKILLS -->
+
+  <section class="detail-section">
+
+    <div class="detail-index">
+      14
+    </div>
+
+    <div class="detail-copy">
+
+      <h2>
+        Engineering skills
+      </h2>
+
+      <ul>
+        <li>
+          Robotic machining
+        </li>
+
+        <li>
+          Industrial robotics
+        </li>
+
+        <li>
+          Milling process engineering
+        </li>
+
+        <li>
+          Cutting-condition definition
+        </li>
+
+        <li>
+          Bézier geometry
+        </li>
+
+        <li>
+          Geometric reconstruction
+        </li>
+
+        <li>
+          Toolpath generation
+        </li>
+
+        <li>
+          Robot kinematics
+        </li>
+      </ul>
+
+    </div>
+
+  </section>
+
+
+  <!-- 15 | LEARNING -->
+
+  <section class="detail-section">
+
+    <div class="detail-index">
+      15
+    </div>
+
+    <div class="detail-copy">
+
+      <h2>
+        What I learned
+      </h2>
+
+      <p>
+        Robot Milling showed me how different robotic machining is from simply
+        mounting a spindle on an industrial robot.
+      </p>
+
+      <p>
+        Successful machining depends on the interaction between cutting conditions,
+        robot stiffness, tool orientation, kinematics and geometric accuracy.
+      </p>
+
+      <p>
+        The project also introduced me to the direct link between mathematical
+        surface representation, geometric reconstruction and physical manufacturing.
+      </p>
+
+    </div>
+
+  </section>
+
+</ProjectLayout>

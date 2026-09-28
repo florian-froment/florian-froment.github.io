@@ -1,0 +1,879 @@
+---
+import ProjectLayout from "../../../layouts/ProjectLayout.astro";
+---
+
+<ProjectLayout
+  title="Robotic Machining Cell"
+  category="Project | Robotic Manufacturing"
+  year="2026"
+  description="ICAM engineering project exploring a robotic machining cell combining 3D scanning, geometric reconstruction, spindle machining and automated deburring."
+>
+
+  <p slot="intro">
+    A robotic manufacturing cell developed during the ICAM engineering curriculum,
+    combining 3D scanning, geometric reconstruction, robotic milling and automated
+    deburring within a single flexible manufacturing system.
+  </p>
+
+
+  <!-- PROJECT SNAPSHOT -->
+
+  <section class="portfolio-hero">
+
+    <div class="portfolio-outcome">
+
+      <span class="portfolio-kicker">
+        Outcome
+      </span>
+
+      <h2>
+        Scan the real part. Reconstruct it. Machine what is actually there.
+      </h2>
+
+      <p>
+        SCANMILL 3D explored a robotic manufacturing workflow in which the
+        geometry of a real component is first captured, reconstructed digitally,
+        and then used to generate adapted machining and deburring trajectories.
+      </p>
+
+      <div class="portfolio-metrics">
+
+        <div>
+          <strong>3D Scan</strong>
+          <span>Real-part acquisition</span>
+        </div>
+
+        <div>
+          <strong>Milling</strong>
+          <span>Robotic spindle integration</span>
+        </div>
+
+        <div>
+          <strong>Deburring</strong>
+          <span>Automated finishing</span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <figure class="portfolio-main-visual">
+
+      <img
+        src="/images/projects/robotic-machining-cell/cell-main.jpg"
+        alt="SCANMILL 3D robotic machining cell"
+      />
+
+      <figcaption>
+        SCANMILL 3D | Robotic scan, machining and deburring concept
+      </figcaption>
+
+    </figure>
+
+  </section>
+
+
+  <!-- 01 | CONTEXT -->
+
+  <section class="detail-section">
+
+    <div class="detail-index">
+      01
+    </div>
+
+    <div class="detail-copy">
+
+      <h2>
+        Context
+      </h2>
+
+      <p>
+        The project was developed as part of my engineering curriculum at ICAM.
+      </p>
+
+      <p>
+        The objective was to study a flexible robotic manufacturing cell capable
+        of adapting machining and finishing operations to the actual geometry
+        of a manufactured component.
+      </p>
+
+      <p>
+        Instead of assuming that every workpiece perfectly matches its nominal
+        CAD model, the system uses 3D acquisition to account for the real part
+        before generating the manufacturing operation.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- 02 | SYSTEM CONCEPT -->
+
+  <section class="portfolio-visual-section">
+
+    <div class="portfolio-section-header">
+
+      <span>
+        02 | System concept
+      </span>
+
+      <h2>
+        Scan. Reconstruct. Machine. Finish.
+      </h2>
+
+    </div>
+
+
+    <div class="process-grid">
+
+      <figure>
+
+        <img
+          src="/images/projects/robotic-machining-cell/scan.jpg"
+          alt="3D scanning stage of SCANMILL 3D"
+        />
+
+        <figcaption>
+          01 | Acquire the real geometry
+        </figcaption>
+
+      </figure>
+
+
+      <figure>
+
+        <img
+          src="/images/projects/robotic-machining-cell/reconstruction.jpg"
+          alt="3D reconstruction of a scanned component"
+        />
+
+        <figcaption>
+          02 | Reconstruct the digital geometry
+        </figcaption>
+
+      </figure>
+
+
+      <figure>
+
+        <img
+          src="/images/projects/robotic-machining-cell/machining.jpg"
+          alt="Robot machining the reconstructed component"
+        />
+
+        <figcaption>
+          03 | Generate and execute the operation
+        </figcaption>
+
+      </figure>
+
+    </div>
+
+  </section>
+
+
+  <!-- 03 | OBJECTIVES -->
+
+  <section class="detail-section">
+
+    <div class="detail-index">
+      03
+    </div>
+
+    <div class="detail-copy">
+
+      <h2>
+        Engineering objectives
+      </h2>
+
+      <ul>
+        <li>
+          Integrate a machining spindle on an industrial robot
+        </li>
+
+        <li>
+          Integrate an automated deburring tool
+        </li>
+
+        <li>
+          Acquire the geometry of a real component in 3D
+        </li>
+
+        <li>
+          Reconstruct usable digital geometry from scan data
+        </li>
+
+        <li>
+          Generate machining trajectories from the reconstructed part
+        </li>
+
+        <li>
+          Adapt operations to geometric deviations
+        </li>
+
+        <li>
+          Create a flexible manufacturing workflow
+        </li>
+      </ul>
+
+    </div>
+
+  </section>
+
+
+  <!-- 04 | MY CONTRIBUTION -->
+
+  <section class="detail-section">
+
+    <div class="detail-index">
+      04
+    </div>
+
+    <div class="detail-copy">
+
+      <h2>
+        My contribution
+      </h2>
+
+      <ul>
+        <li>
+          Worked on the overall robotic machining-cell concept
+        </li>
+
+        <li>
+          Studied spindle integration on the robot
+        </li>
+
+        <li>
+          Worked on deburring-tool integration
+        </li>
+
+        <li>
+          Contributed to the 3D scanning workflow
+        </li>
+
+        <li>
+          Studied geometric reconstruction from scan data
+        </li>
+
+        <li>
+          Worked on the connection between reconstructed geometry and toolpaths
+        </li>
+
+        <li>
+          Considered robotic accessibility and manufacturing constraints
+        </li>
+      </ul>
+
+    </div>
+
+  </section>
+
+
+  <!-- 05 | CELL ARCHITECTURE -->
+
+  <section class="portfolio-system">
+
+    <div class="portfolio-section-header">
+
+      <span>
+        05 | Cell architecture
+      </span>
+
+      <h2>
+        One robot. Multiple manufacturing functions.
+      </h2>
+
+    </div>
+
+
+    <div class="system-grid">
+
+      <figure class="system-overview">
+
+        <img
+          src="/images/projects/robotic-machining-cell/system-overview.jpg"
+          alt="Overall SCANMILL 3D robotic machining cell architecture"
+        />
+
+        <figcaption>
+          Cell architecture | Robot, workpiece, scan and machining systems
+        </figcaption>
+
+      </figure>
+
+
+      <div class="subsystem-stack">
+
+        <figure>
+
+          <img
+            src="/images/projects/robotic-machining-cell/end-effector.jpg"
+            alt="Robotic machining end effector"
+          />
+
+          <figcaption>
+            End effector | Spindle and finishing-tool integration
+          </figcaption>
+
+        </figure>
+
+
+        <div class="subsystem-copy">
+
+          <h3>
+            Multi-function end effector
+          </h3>
+
+          <p>
+            The robot must support different manufacturing functions while
+            maintaining sufficient accessibility around the component.
+          </p>
+
+          <p>
+            Spindle geometry, deburring equipment, tool length and robot wrist
+            orientation therefore influence both mechanical integration and
+            reachable machining configurations.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 06 | 3D SCANNING -->
+
+  <section class="detail-section">
+
+    <div class="detail-index">
+      06
+    </div>
+
+    <div class="detail-copy">
+
+      <h2>
+        3D acquisition
+      </h2>
+
+      <p>
+        The first stage of the workflow is the acquisition of the actual
+        workpiece geometry.
+      </p>
+
+      <p>
+        A 3D scan makes it possible to capture dimensional variations that are
+        not represented by the nominal CAD model.
+      </p>
+
+      <p>
+        This creates the foundation for a manufacturing process that reacts
+        to the real component rather than to an idealised geometry.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- 07 | RECONSTRUCTION -->
+
+  <section class="detail-section">
+
+    <div class="detail-index">
+      07
+    </div>
+
+    <div class="detail-copy">
+
+      <h2>
+        Geometric reconstruction
+      </h2>
+
+      <p>
+        Raw scanning data cannot directly be used as a machining definition.
+      </p>
+
+      <p>
+        The acquired point cloud or mesh must therefore be cleaned, interpreted
+        and converted into geometry suitable for trajectory generation.
+      </p>
+
+      <p>
+        This reconstruction step creates the link between metrology and
+        manufacturing.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- DIGITAL WORKFLOW -->
+
+  <section class="portfolio-wide-visual">
+
+    <figure>
+
+      <img
+        src="/images/projects/robotic-machining-cell/digital-workflow.jpg"
+        alt="SCANMILL 3D digital manufacturing workflow"
+      />
+
+      <figcaption>
+        Digital workflow | Scan → reconstruction → toolpath → robotic operation
+      </figcaption>
+
+    </figure>
+
+  </section>
+
+
+  <!-- 08 | ROBOTIC MILLING -->
+
+  <section class="detail-section">
+
+    <div class="detail-index">
+      08
+    </div>
+
+    <div class="detail-copy">
+
+      <h2>
+        Robotic milling
+      </h2>
+
+      <p>
+        A machining spindle mounted on the robot provides a flexible alternative
+        for operations where a conventional machine tool may not be necessary
+        or where accessibility is particularly complex.
+      </p>
+
+      <p>
+        The process must however account for the lower structural rigidity of
+        an industrial robot compared with a dedicated CNC machine tool.
+      </p>
+
+      <ul>
+        <li>
+          Cutting forces
+        </li>
+
+        <li>
+          Robot configuration
+        </li>
+
+        <li>
+          Tool orientation
+        </li>
+
+        <li>
+          Structural compliance
+        </li>
+
+        <li>
+          Vibration
+        </li>
+
+        <li>
+          Path accuracy
+        </li>
+      </ul>
+
+    </div>
+
+  </section>
+
+
+  <!-- 09 | DEBURRING -->
+
+  <section class="detail-section">
+
+    <div class="detail-index">
+      09
+    </div>
+
+    <div class="detail-copy">
+
+      <h2>
+        Automated deburring
+      </h2>
+
+      <p>
+        Deburring is particularly suited to robotic automation because the robot
+        can orient the finishing tool around complex edges and three-dimensional
+        component geometry.
+      </p>
+
+      <p>
+        Integrating the deburring operation into the same digital workflow makes
+        it possible to use reconstructed geometry to determine where material
+        finishing is required.
+      </p>
+
+      <p>
+        The objective is to reduce dependence on fixed trajectories when the
+        geometry of the real component varies.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- 10 | ADAPTIVE MANUFACTURING -->
+
+  <section class="detail-section">
+
+    <div class="detail-index">
+      10
+    </div>
+
+    <div class="detail-copy">
+
+      <h2>
+        Adaptive manufacturing
+      </h2>
+
+      <p>
+        The central idea behind SCANMILL 3D is to close the gap between
+        measurement and manufacturing.
+      </p>
+
+      <p>
+        Instead of following a fixed trajectory generated exclusively from
+        nominal CAD geometry, the process can potentially adapt the operation
+        according to the actual manufactured component.
+      </p>
+
+      <p>
+        This creates a more flexible approach for parts with geometric variation,
+        finishing requirements or complex free-form surfaces.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- 11 | DEVELOPMENT -->
+
+  <section class="portfolio-visual-section">
+
+    <div class="portfolio-section-header">
+
+      <span>
+        11 | Development
+      </span>
+
+      <h2>
+        Measure. Understand. Adapt.
+      </h2>
+
+    </div>
+
+
+    <div class="process-grid">
+
+      <figure>
+
+        <img
+          src="/images/projects/robotic-machining-cell/cad-cell.jpg"
+          alt="CAD development of the SCANMILL 3D cell"
+        />
+
+        <figcaption>
+          Cell design
+        </figcaption>
+
+      </figure>
+
+
+      <figure>
+
+        <img
+          src="/images/projects/robotic-machining-cell/toolpath-generation.jpg"
+          alt="Toolpath generation for robotic machining"
+        />
+
+        <figcaption>
+          Toolpath generation
+        </figcaption>
+
+      </figure>
+
+
+      <figure>
+
+        <img
+          src="/images/projects/robotic-machining-cell/robot-simulation.jpg"
+          alt="Simulation of robotic machining operation"
+        />
+
+        <figcaption>
+          Robot simulation
+        </figcaption>
+
+      </figure>
+
+    </div>
+
+  </section>
+
+
+  <!-- 12 | CHALLENGES -->
+
+  <section class="detail-section">
+
+    <div class="detail-index">
+      12
+    </div>
+
+    <div class="detail-copy">
+
+      <h2>
+        Engineering challenges
+      </h2>
+
+      <ul>
+        <li>
+          Scan accuracy and repeatability
+        </li>
+
+        <li>
+          Point-cloud and mesh reconstruction
+        </li>
+
+        <li>
+          Alignment between scan and robot coordinate systems
+        </li>
+
+        <li>
+          Robotic path generation
+        </li>
+
+        <li>
+          Robot stiffness during machining
+        </li>
+
+        <li>
+          End-effector accessibility
+        </li>
+
+        <li>
+          Tool-change and process integration
+        </li>
+
+        <li>
+          Collision avoidance
+        </li>
+      </ul>
+
+    </div>
+
+  </section>
+
+
+  <!-- 13 | DOCUMENTATION -->
+
+  <section class="portfolio-documents">
+
+    <div class="portfolio-section-header">
+
+      <span>
+        13 | Documentation
+      </span>
+
+      <h2>
+        Engineering records.
+      </h2>
+
+    </div>
+
+
+    <div class="document-grid">
+
+      <a
+        href="/documents/robotic-machining-cell/project-report.pdf"
+        target="_blank"
+        class="document-card"
+      >
+
+        <div>
+
+          <span class="document-type">
+            PDF
+          </span>
+
+          <h3>
+            Project report
+          </h3>
+
+          <p>
+            System architecture, engineering methodology and project conclusions.
+          </p>
+
+        </div>
+
+        <span class="document-arrow">
+          ↗
+        </span>
+
+      </a>
+
+
+      <a
+        href="/documents/robotic-machining-cell/scan-study.pdf"
+        target="_blank"
+        class="document-card"
+      >
+
+        <div>
+
+          <span class="document-type">
+            PDF
+          </span>
+
+          <h3>
+            3D scanning study
+          </h3>
+
+          <p>
+            Acquisition, reconstruction and geometric-processing workflow.
+          </p>
+
+        </div>
+
+        <span class="document-arrow">
+          ↗
+        </span>
+
+      </a>
+
+
+      <a
+        href="/documents/robotic-machining-cell/machining-study.pdf"
+        target="_blank"
+        class="document-card"
+      >
+
+        <div>
+
+          <span class="document-type">
+            PDF
+          </span>
+
+          <h3>
+            Machining study
+          </h3>
+
+          <p>
+            Robotic milling, deburring and trajectory-generation considerations.
+          </p>
+
+        </div>
+
+        <span class="document-arrow">
+          ↗
+        </span>
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- 14 | SKILLS -->
+
+  <section class="detail-section">
+
+    <div class="detail-index">
+      14
+    </div>
+
+    <div class="detail-copy">
+
+      <h2>
+        Engineering skills
+      </h2>
+
+      <ul>
+        <li>
+          Industrial robotics
+        </li>
+
+        <li>
+          Robotic machining
+        </li>
+
+        <li>
+          3D scanning
+        </li>
+
+        <li>
+          Geometric reconstruction
+        </li>
+
+        <li>
+          Toolpath generation
+        </li>
+
+        <li>
+          Milling process integration
+        </li>
+
+        <li>
+          Automated deburring
+        </li>
+
+        <li>
+          Digital manufacturing
+        </li>
+      </ul>
+
+    </div>
+
+  </section>
+
+
+  <!-- 15 | LEARNING -->
+
+  <section class="detail-section">
+
+    <div class="detail-index">
+      15
+    </div>
+
+    <div class="detail-copy">
+
+      <h2>
+        What I learned
+      </h2>
+
+      <p>
+        SCANMILL 3D showed me that flexible manufacturing is not only about
+        making a robot reproduce a predefined trajectory.
+      </p>
+
+      <p>
+        A more adaptive manufacturing system can use measurement of the real
+        component to modify the manufacturing process itself.
+      </p>
+
+      <p>
+        The project also connected several fields that strongly interest me:
+        robotics, mechanical design, machining, 3D reconstruction and industrial
+        automation.
+      </p>
+
+    </div>
+
+  </section>
+
+</ProjectLayout>
